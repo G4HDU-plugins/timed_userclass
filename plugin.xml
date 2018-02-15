@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e107Plugin name="Timed Userclass" lan="LAN_PLUGIN__BLANK_NAME" version="2.0.1" date="2018-02-15" compatibility="2.0" installRequired="true" >
+	<author name="Father Barry" url="http://www.keal.me.uk" />
+	<summary>Change users class depending on specified criteria</summary>
+	<description lan="LAN_PLUGIN__BLANK_DIZ">Change users class depending on specified criteria or times.</description>
+	<category>manage</category>
+	<keywords>
+		<word>userclass</word>
+		<word>user</word>
+	</keywords>
+	<screenshots>
+		<image></image>
+	</screenshots>
+	<adminLinks>
+		<link url='admin_config.php' description='Configure Timed Userclass' icon='images/tclass_32.png' iconSmall='images/tclass_16.png' icon128="images/tclass_128.png" primary='true' >LAN_CONGIGURE</link>
+		<link url="admin_config.php?mode=options" description="Configure Timed Userclass" icon="manage" >Blank Prefs</link>
+	</adminLinks>
+	<pluginPrefs>
+		<pref name="blank_pref_1">1</pref>
+		<pref name="blank_pref_2">[more...]</pref>
+		<pref name="blank_pref_3">0</pref>
+	</pluginPrefs>
+	<userClasses>
+		<class name="empty_userclass" description="Empty Class for users" />		
+	</userClasses>
+	<extendedFields>
+		<field name="custom" type='EUF_TEXTAREA' default='0' active="true" />
+		<field name="custom2" type='EUF_ADDON' data="str" default='0' active="true" system="false" text="My Label" />
+	</extendedFields>
+</e107Plugin>
