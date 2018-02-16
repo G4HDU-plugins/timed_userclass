@@ -57,7 +57,7 @@ define(TCLASS_A22, "Move Users");
 define(TCLASS_A23, "Delete users");
 define(TCLASS_A24, "Copy users");
 define(TCLASS_A25, "You are now about to promote users based on the criteria set in the main configuration. If you have a large number of users you may need to increase the execution time.<br /><br />If you have enabled the notify users option then this may generate a large number of emails which could cause problems with your ISP.<br /><br />Ensure you have a tested backup before promoting.");
-define(TCLASS_A26, "email");
+define(TCLASS_A26, "Email");
 define(TCLASS_A27, "PM");
 define(TCLASS_A28, "Users");
 define(TCLASS_A29, "Main Configuration");
@@ -84,6 +84,7 @@ define(TCLASS_A49, "Date must be set. Date must be after now.");
 define(TCLASS_A50, "An identical record exists");
 define(TCLASS_A51, "Remove Admin");
 define(TCLASS_A52, "Remove");
+define(TCLASS_A53, "None");
 
 
 define(TCLASS_U01, "User");
