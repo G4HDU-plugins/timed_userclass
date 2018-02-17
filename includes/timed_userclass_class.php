@@ -12,73 +12,20 @@
 */
 class timed_userclass
 {
-    var $tclass_dateform = "d-m-Y";
-    var $tclass_doall = false;
-    var $tclass_active = false;
+    public $tclass_dateform = "d-m-Y";
+    public $tclass_doall = false;
+    public $tclass_active = false;
+    public $prefs;
     function timed_userclass()
     {
-        global $tp, $TCLASS_PREF;
-        $this->load_prefs();
-        $this->tclass_dateform = $tp->toFORM($TCLASS_PREF['tclass_dateform']);
-        $this->tclass_doall = $TCLASS_PREF['tclass_doall'] == 1;
-        $this->tclass_active = $TCLASS_PREF['tclass_active'] == 1;
-        $this->tclass_lastcheck = $TCLASS_PREF['tclass_lastcheck'];
+       
+         $this->prefs = e107::pref('timed_userclass');
+       /// $this->tclass_dateform = $tp->toFORM($TCLASS_PREF['tclass_dateform']);
+       // $this->tclass_doall = $TCLASS_PREF['tclass_doall'] == 1;
+        $this->tclass_active = $this->prefs['pluginActive'];
+       // $this->tclass_lastcheck = $TCLASS_PREF['tclass_lastcheck'];
     }
-    // ********************************************************************************************
-    // *
-    // * load and Save prefs
-    // *
-    // ********************************************************************************************
-    function getdefaultprefs()
-    {
-        global $TCLASS_PREF;
-        $TCLASS_PREF = array("tclass_css" => 1,
-            "tclass_doall" => 0,
-            "tclass_emailname" => "Admin",
-            "tclass_emailfrom" => "admin@example.com",
-            "tclass_dateform" => "d-m-Y",
-            "tclass_lastcheck" => 0,
-            "tclass_pmfrom" => 0,
-            "tclass_active" => 0
-            );
-    }
-    function save_prefs()
-    {
-        global $sql, $eArrayStorage, $TCLASS_PREF;
-        // save preferences to database
-        if (!is_object($sql))
-        {
-            $sql = new db;
-        }
-        $tmp = $eArrayStorage->WriteArray($TCLASS_PREF);
-        $sql->db_Update("core", "e107_value='$tmp' where e107_name='tuclass'", false);
-        return ;
-    }
-    function load_prefs()
-    {
-        global $sql, $eArrayStorage, $TCLASS_PREF;
-        // get preferences from database
-        if (!is_object($sql))
-        {
-            $sql = new db;
-        }
-        $num_rows = $sql->db_Select("core", "*", "e107_name='tuclass' ");
-        $row = $sql->db_Fetch();
-
-        if (empty($row['e107_value']))
-        {
-            // insert default preferences if none exist
-            $this->getDefaultPrefs();
-            $tmp = $eArrayStorage->WriteArray($TCLASS_PREF);
-            $sql->db_Insert("core", "'tuclass', '$tmp' ");
-            $sql->db_Select("core", "*", "e107_name='tuclass' ");
-        }
-        else
-        {
-            $TCLASS_PREF = $eArrayStorage->ReadArray($row['e107_value']);
-        }
-        return;
-    }
+    
     function do_promote($tclass_promoteid = 0, $tclass_row)
     {
         global $sql;

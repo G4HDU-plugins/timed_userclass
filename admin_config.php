@@ -313,6 +313,12 @@ class plugin_timed_userclass_admin_ui extends e_admin_ui
             'data' => 'str',
             'width' => 'auto',
             'thclass' => 'left'),
+        'tclass_donestart' => array(
+            'title' => TCLASS_A54,
+            'type' => 'checkbox',
+            'data' => 'int',
+            'width' => 'auto',
+            'thclass' => 'left'),
         'options' => array(
             'title' => LAN_OPTIONS,
             'type' => null,

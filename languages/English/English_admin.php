@@ -85,6 +85,7 @@ define(TCLASS_A50, "An identical record exists");
 define(TCLASS_A51, "Remove Admin");
 define(TCLASS_A52, "Remove");
 define(TCLASS_A53, "None");
+define(TCLASS_A54, "Completed");
 
 
 define(TCLASS_U01, "User");
