@@ -53,9 +53,7 @@ class plugin_timed_userclass_admin extends e_admin_dispatcher
     protected $adminMenu = array(
         'main/list' => array('caption' => 'Manage Times', 'perm' => '0'),
         'main/create' => array('caption' => LAN_CREATE, 'perm' => '0'),
-        'main/prefs' => array('caption' => 'Settings', 'perm' => '0'),
-        'main/rules' => array('caption' => 'Manage Rules', 'perm' => '0'),
-        'main/rulecreate' => array('caption' => 'LAN_CREATE', 'perm' => '0')
+        'main/prefs' => array('caption' => 'Settings', 'perm' => '0')
         );
 
     /**
